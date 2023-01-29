@@ -7,7 +7,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container bg-dark text-light">
+    <!--div class="container bg-dark text-light">
     {% block content %}
 
     {% endblock %}
@@ -17,9 +17,10 @@
     {% block content2 %}
 
     {% endblock %}
-    </div>
+    </div-->
     <div class="container-fluid bg-dark text-light">
-    
+
+    {% comment %}
     {% block content3 %}
 
     {% endblock %}
@@ -33,6 +34,12 @@
     {% endblock %}
 
     {% block content6 %}
+
+    {% endblock %}
+    {% endcomment %}
+    
+    <p>Meme</p>
+    {% block posts %}
 
     {% endblock %}
 
