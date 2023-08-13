@@ -22,6 +22,7 @@ import blango_auth.views
 from django_registration.backends.activation.views import RegistrationView
 from blango_auth.forms import BlangoRegistrationForm
 import blog.api_urls
+from django.conf.urls.static import static
 
 urlpatterns = [
     #path("api/v1/", include("blog.api_urls")),
@@ -43,5 +44,5 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += [
-        path("__debug__/", include(debug_toolbar.urls))
-    ]
+        path("__debug__/", include(debug_toolbar.urls)),
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

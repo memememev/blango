@@ -64,7 +64,8 @@ class Dev(Configuration):
     "rest_framework",
     "rest_framework.authtoken",
     "drf_yasg",
-    "django_filters"
+    "django_filters",
+    "versatileimagefield"
     ]
 
     SITE_ID = 1
@@ -252,11 +253,14 @@ class Dev(Configuration):
     ACCOUNT_USERNAME_REQUIRED = False
     ACCOUNT_AUTHENTICATION_METHOD = "email"
 
-class Prod(Dev):
-    DEBUG = False
-    SECRET_KEY = values.SecretValue()
-    ADMINS = [("Valerii", "valerii.lovkin@gmail.com")]
     SIMPLE_JWT = {
         "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
         "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
     }
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = "/media/"
+
+class Prod(Dev):
+    DEBUG = False
+    SECRET_KEY = values.SecretValue()
+    ADMINS = [("Valerii", "valerii.lovkin@gmail.com")]
