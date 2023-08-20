@@ -1,16 +1,4 @@
-{% extends "base.html" %}
-{% load static %}
-{% block posts %}
-      <div class="row">
-        <div class="col">
-            <div id="react_root"></div>
-        </div>
-    </div>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <!--script src="{% static "blog/blog.js" %}"></script-->
-    <script>
-      class ClickButton extends React.Component {
+class ClickButton extends React.Component {
   state = {
     wasClicked: false
   }
@@ -47,5 +35,3 @@ ReactDOM.render(
   React.createElement(ClickButton),
   domContainer
 )
-    </script>
-{% endblock %}
